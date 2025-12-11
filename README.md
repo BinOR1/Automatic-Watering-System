@@ -40,7 +40,7 @@ __Mục tiêu__
 - Phần mềm phát triển: Platform.IO
 
 # Sơ đồ khối:
-[!Hình 8](./images/8.png)
+![Hình 8](./images/8.png)
 
 # Sơ đồ chân kết nối:
 1. Sơ đồ pin:

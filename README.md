@@ -2,14 +2,14 @@
 
 ## Đặt vấn đề
 __Bài toán đặt ra__
-Nhiều người trồng cây (trong nhà, ban công, vườn nhỏ, mô hình thủy canh, v.v.) thường không có thời gian theo dõi độ ẩm đất và tưới nước thường xuyên. Việc tưới quá tay hoặc quên tưới đều có thể làm cây kém phát triển hoặc chết.
+- Nhiều người trồng cây (trong nhà, ban công, vườn nhỏ, mô hình thủy canh, v.v.) thường không có thời gian theo dõi độ ẩm đất và tưới nước thường xuyên. Việc tưới quá tay hoặc quên tưới đều có thể làm cây kém phát triển hoặc chết.
 
-Hệ thống trong dự án này dùng ESP32 kết hợp các cảm biến để:
-- Đo nhiệt độ, độ ẩm không khí (DHT11).
-- Đo khí gas (MQ2).
-- Đo độ ẩm đất tại 3 vị trí khác nhau.
-- Điều khiển bơm nước qua relay theo chế độ tự động (dựa trên độ ẩm đất) hoặc bằng tay qua MQTT / Dashboard.
-- Gửi dữ liệu cảm biến và trạng thái bơm lên MQTT Broker (EMQX) để hiển thị và điều khiển trên Node-RED hoặc ứng dụng khác.
+- Hệ thống trong dự án này dùng ESP32 kết hợp các cảm biến để:
+    + Đo nhiệt độ, độ ẩm không khí (DHT11).
+    + Đo khí gas (MQ2).
+    + Đo độ ẩm đất tại 3 vị trí khác nhau.
+    + Điều khiển bơm nước qua relay theo chế độ tự động (dựa trên độ ẩm đất) hoặc bằng tay qua MQTT / Dashboard.
+    + Gửi dữ liệu cảm biến và trạng thái bơm lên MQTT Broker (EMQX) để hiển thị và điều khiển trên Node-RED hoặc ứng dụng khác.
 
 __Mục tiêu__
 - Giảm công tưới tay, đảm bảo cây luôn được tưới vừa đủ.
@@ -40,7 +40,7 @@ __Mục tiêu__
 - Phần mềm phát triển: Platform.IO
 
 
-# Sơ bộ chân kết nối:
+# Sơ đồ chân kết nối:
 1. Sơ đồ pin:
 Sơ đồ được mô phỏng trên Fritzing.
 ![Hình 1](./images/1.png)

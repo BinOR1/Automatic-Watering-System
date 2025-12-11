@@ -1,0 +1,1846 @@
+[
+    {
+        "id": "plant_tab_home",
+        "type": "tab",
+        "label": "Home",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "plant_tab_sensors",
+        "type": "tab",
+        "label": "Sensors Data",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "plant_tab_pump",
+        "type": "tab",
+        "label": "Pump Control",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "plant_tls_config",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "plant_mqtt_broker",
+        "type": "mqtt-broker",
+        "name": "Plant EMQX Broker",
+        "broker": "p40f7387.ala.asia-southeast1.emqxsl.com",
+        "port": "8883",
+        "tls": "plant_tls_config",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "plant_ui_base",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#4B7F52",
+                "baseColor": "#4B7F52",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Plant Light Theme",
+                "default": "#4B7F52",
+                "baseColor": "#4B7F52",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#4B7F52",
+                    "value": "#4B7F52",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#4B7F52",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": true
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": true
+                },
+                "group-textColor": {
+                    "value": "#6da975",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#dddddd",
+                    "edited": true
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": true
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": true
+                },
+                "widget-backgroundColor": {
+                    "value": "#4b7f52",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#dddddd",
+                    "edited": true
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Smart Plant Watering System",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "plant_ui_tab_home",
+        "type": "ui_tab",
+        "name": "Home Dashboard",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "plant_ui_tab_sensors",
+        "type": "ui_tab",
+        "name": "Sensor Monitoring",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "plant_ui_tab_soil",
+        "type": "ui_tab",
+        "name": "Soil Sensors",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "plant_ui_tab_pump",
+        "type": "ui_tab",
+        "name": "Pump Control",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "plant_ui_group_clock",
+        "type": "ui_group",
+        "name": "Current Time",
+        "tab": "plant_ui_tab_home",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "plant_ui_group_info",
+        "type": "ui_group",
+        "name": "System Info",
+        "tab": "plant_ui_tab_home",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "plant_ui_group_features",
+        "type": "ui_group",
+        "name": "Features",
+        "tab": "plant_ui_tab_home",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "plant_ui_group_realtime",
+        "type": "ui_group",
+        "name": "Real-time Sensors",
+        "tab": "plant_ui_tab_home",
+        "order": 4,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "plant_ui_group_status",
+        "type": "ui_group",
+        "name": "Connection Status",
+        "tab": "plant_ui_tab_home",
+        "order": 5,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "plant_ui_group_temp",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "plant_ui_tab_sensors",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "plant_ui_group_humid",
+        "type": "ui_group",
+        "name": "Humidity",
+        "tab": "plant_ui_tab_sensors",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "plant_ui_group_soil",
+        "type": "ui_group",
+        "name": "Soil Moisture",
+        "tab": "plant_ui_tab_soil",
+        "order": 3,
+        "disp": true,
+        "width": 24,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "plant_ui_group_gas",
+        "type": "ui_group",
+        "name": "Gas Sensor",
+        "tab": "plant_ui_tab_sensors",
+        "order": 4,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "plant_ui_group_pump_control",
+        "type": "ui_group",
+        "name": "Control Panel",
+        "tab": "plant_ui_tab_pump",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "plant_ui_group_pump_status",
+        "type": "ui_group",
+        "name": "Pump Status",
+        "tab": "plant_ui_tab_pump",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "plant_ui_group_pump_timing",
+        "type": "ui_group",
+        "name": "Pump Timing",
+        "tab": "plant_ui_tab_pump",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6a24a1aa8c67172b",
+        "type": "ui_spacer",
+        "z": "plant_tab_pump",
+        "name": "spacer",
+        "group": "plant_ui_group_soil",
+        "order": 3,
+        "width": 24,
+        "height": 1
+    },
+    {
+        "id": "41f5fc4d658b647c",
+        "type": "ui_spacer",
+        "z": "plant_tab_pump",
+        "name": "spacer",
+        "group": "plant_ui_group_soil",
+        "order": 11,
+        "width": 12,
+        "height": 1
+    },
+    {
+        "id": "0ff413b81549f22d",
+        "type": "ui_spacer",
+        "z": "plant_tab_pump",
+        "name": "spacer",
+        "group": "plant_ui_group_soil",
+        "order": 12,
+        "width": 12,
+        "height": 1
+    },
+    {
+        "id": "25d579e42b3aa9a2",
+        "type": "ui_spacer",
+        "z": "plant_tab_pump",
+        "name": "spacer",
+        "group": "plant_ui_group_soil",
+        "order": 13,
+        "width": 12,
+        "height": 1
+    },
+    {
+        "id": "home_temp_in",
+        "type": "mqtt in",
+        "z": "plant_tab_home",
+        "name": "Home Temp In",
+        "topic": "plant/sensor/temperature",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "plant_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 620,
+        "y": 100,
+        "wires": [
+            [
+                "realtime_display",
+                "feature_update"
+            ]
+        ]
+    },
+    {
+        "id": "home_humid_in",
+        "type": "mqtt in",
+        "z": "plant_tab_home",
+        "name": "Home Humid In",
+        "topic": "plant/sensor/humidity",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "plant_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": null,
+        "x": 620,
+        "y": 160,
+        "wires": [
+            [
+                "realtime_display",
+                "feature_update"
+            ]
+        ]
+    },
+    {
+        "id": "home_soil_in",
+        "type": "mqtt in",
+        "z": "plant_tab_home",
+        "name": "Home Soil In",
+        "topic": "plant/sensor/soil_avg",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "plant_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": null,
+        "x": 610,
+        "y": 220,
+        "wires": [
+            [
+                "realtime_display",
+                "feature_update"
+            ]
+        ]
+    },
+    {
+        "id": "home_gas_in",
+        "type": "mqtt in",
+        "z": "plant_tab_home",
+        "name": "Home Gas In",
+        "topic": "plant/sensor/gas",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "plant_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": null,
+        "x": 610,
+        "y": 280,
+        "wires": [
+            [
+                "realtime_display",
+                "feature_update"
+            ]
+        ]
+    },
+    {
+        "id": "home_pump_in",
+        "type": "mqtt in",
+        "z": "plant_tab_home",
+        "name": "Home Pump Status",
+        "topic": "plant/pump/status",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "plant_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": null,
+        "x": 170,
+        "y": 440,
+        "wires": [
+            [
+                "pump_status_display"
+            ]
+        ]
+    },
+    {
+        "id": "pump_status_display",
+        "type": "function",
+        "z": "plant_tab_home",
+        "name": "Update Pump Display",
+        "func": "msg.payload = msg.payload === 'ON' ? 'RUNNING' : 'STOPPED';\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 440,
+        "wires": [
+            [
+                "pump_text_update"
+            ]
+        ]
+    },
+    {
+        "id": "mqtt_check_inject",
+        "type": "inject",
+        "z": "plant_tab_home",
+        "name": "Check Connection",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Connected",
+        "payloadType": "str",
+        "x": 190,
+        "y": 520,
+        "wires": [
+            [
+                "mqtt_check_out"
+            ]
+        ]
+    },
+    {
+        "id": "mqtt_check_out",
+        "type": "mqtt out",
+        "z": "plant_tab_home",
+        "name": "MQTT Check Out",
+        "topic": "plant/check_connect",
+        "qos": "1",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "plant_mqtt_broker",
+        "x": 450,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "mqtt_check_in",
+        "type": "mqtt in",
+        "z": "plant_tab_home",
+        "name": "MQTT Check In",
+        "topic": "plant/check_connect",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "plant_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": null,
+        "x": 170,
+        "y": 620,
+        "wires": [
+            [
+                "mqtt_status_function"
+            ]
+        ]
+    },
+    {
+        "id": "mqtt_status_function",
+        "type": "function",
+        "z": "plant_tab_home",
+        "name": "Check MQTT Status",
+        "func": "const timeout = 5000;\nconst currentTime = Date.now();\nconst lastConnectedTime = context.get('lastConnectedTime') || 0;\n\nif (msg.payload === \"Connected\") {\n  context.set('lastConnectedTime', currentTime);\n  return { payload: \"Connected\" };\n}\n\nif (currentTime - lastConnectedTime > timeout) {\n  return { payload: \"Disconnected\" };\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 620,
+        "wires": [
+            [
+                "mqtt_status_template"
+            ]
+        ]
+    },
+    {
+        "id": "comment_home",
+        "type": "comment",
+        "z": "plant_tab_home",
+        "name": "Home Dashboard - System Overview & MQTT Status",
+        "info": "",
+        "x": 200,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "clock_template",
+        "type": "ui_template",
+        "z": "plant_tab_home",
+        "group": "plant_ui_group_clock",
+        "name": "Clock Widget",
+        "order": 1,
+        "width": 6,
+        "height": 3,
+        "format": "<div class=\"clock-container\">\n  <div class=\"clock-icon\">\n    <i class=\"fa fa-clock-o\"></i>\n  </div>\n  <p class=\"clock-time\" id=\"clock\"></p>\n  <p class=\"clock-date\" id=\"date\"></p>\n</div>\n\n<script>\nfunction updateClock() {\n  const now = new Date();\n  const hours = String(now.getHours()).padStart(2, '0');\n  const minutes = String(now.getMinutes()).padStart(2, '0');\n  const seconds = String(now.getSeconds()).padStart(2, '0');\n  document.getElementById('clock').textContent = hours + ':' + minutes + ':' + seconds;\n  \n  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];\n  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\n  const dateStr = days[now.getDay()] + ', ' + now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear();\n  document.getElementById('date').textContent = dateStr;\n}\nsetInterval(updateClock, 1000);\nupdateClock();\n</script>\n\n<style>\n.clock-container {\n  text-align: center;\n  padding: 10px;\n}\n\n.clock-icon {\n  font-size: 2rem;\n  color: #4B7F52;\n  margin-bottom: 10px;\n}\n\n.clock-time {\n  font-size: 2.5rem;\n  font-family: 'Courier New', Courier, monospace;\n  font-weight: bold;\n  color: #4B7F52;\n  margin: 5px 0;\n}\n\n.clock-date {\n  font-size: 0.9rem;\n  color: #666666;\n  margin: 5px 0;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "system_info_template",
+        "type": "ui_template",
+        "z": "plant_tab_home",
+        "group": "plant_ui_group_info",
+        "name": "System Info",
+        "order": 1,
+        "width": 6,
+        "height": 3,
+        "format": "<div class=\"info-container\">\n  <h3 class=\"info-title\">Smart Plant Watering</h3>\n  <div class=\"info-item\">\n    <i class=\"fa fa-microchip\"></i>\n    <span>ESP32 DevKit</span>\n  </div>\n  <div class=\"info-item\">\n    <i class=\"fa fa-wifi\"></i>\n    <span>MQTT + WiFi</span>\n  </div>\n  <div class=\"info-item\">\n    <i class=\"fa fa-leaf\"></i>\n    <span>Auto Watering</span>\n  </div>\n</div>\n\n<style>\n.info-container {\n  padding: 10px;\n  text-align: center;\n}\n\n.info-title {\n  font-size: 1.3rem;\n  color: #4B7F52;\n  margin-bottom: 15px;\n  font-weight: bold;\n}\n\n.info-item {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 10px;\n  padding: 5px;\n  font-size: 0.95rem;\n  color: #666666;\n}\n\n.info-item i {\n  color: #4B7F52;\n  font-size: 1.2rem;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 370,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "features_template",
+        "type": "ui_template",
+        "z": "plant_tab_home",
+        "group": "plant_ui_group_features",
+        "name": "Features Grid",
+        "order": 1,
+        "width": 12,
+        "height": 3,
+        "format": "<div class=\"features-grid\">\n  <div class=\"feature-card\" id=\"temp-feature\">\n    <i class=\"fa fa-thermometer-half\"></i>\n    <p class=\"feature-title\">Temperature</p>\n    <p class=\"feature-status\" id=\"temp-status\">--°C</p>\n  </div>\n  <div class=\"feature-card\" id=\"humid-feature\">\n    <i class=\"fa fa-tint\"></i>\n    <p class=\"feature-title\">Humidity</p>\n    <p class=\"feature-status\" id=\"humid-status\">--%</p>\n  </div>\n  <div class=\"feature-card\" id=\"soil-feature\">\n    <i class=\"fa fa-leaf\"></i>\n    <p class=\"feature-title\">Soil Moisture</p>\n    <p class=\"feature-status\" id=\"soil-status\">--%</p>\n  </div>\n  <div class=\"feature-card\" id=\"gas-feature\">\n    <i class=\"fa fa-fire\"></i>\n    <p class=\"feature-title\">Gas Level</p>\n    <p class=\"feature-status\" id=\"gas-status\">--%</p>\n  </div>\n  <div class=\"feature-card\" id=\"pump-feature\">\n    <i class=\"fa fa-power-off\"></i>\n    <p class=\"feature-title\">Pump</p>\n    <p class=\"feature-status\" id=\"pump-status\">OFF</p>\n  </div>\n</div>\n\n<style>\n.features-grid {\n  display: grid;\n  grid-template-columns: repeat(5, 1fr);\n  gap: 12px;\n  padding: 10px;\n}\n\n.feature-card {\n  text-align: center;\n  padding: 12px 8px;\n  background-color: #f5f5f5;\n  border-radius: 8px;\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n  cursor: pointer;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n.feature-card:hover {\n  transform: translateY(-3px);\n  box-shadow: 0 4px 12px rgba(75, 127, 82, 0.3);\n}\n\n.feature-card i {\n  font-size: 1.8rem;\n  color: #4B7F52;\n  margin-bottom: 6px;\n}\n\n.feature-title {\n  font-size: 0.85rem;\n  color: #333333;\n  margin: 0 0 4px 0;\n  font-weight: 500;\n}\n\n.feature-status {\n  font-size: 1rem;\n  color: #4B7F52;\n  margin: 0;\n  font-weight: bold;\n  font-family: 'Courier New', monospace;\n}\n\n@media (max-width: 1024px) {\n  .features-grid {\n    grid-template-columns: repeat(3, 1fr);\n  }\n}\n\n@media (max-width: 768px) {\n  .features-grid {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 260,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "feature_update",
+        "type": "ui_template",
+        "z": "plant_tab_home",
+        "group": "plant_ui_group_features",
+        "name": "Feature Status Update",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<script>\n(function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (msg && msg.topic) {\n      if (msg.topic.includes('temperature')) {\n        const el = document.getElementById('temp-status');\n        if (el) el.textContent = parseFloat(msg.payload).toFixed(1) + '°C';\n      } else if (msg.topic.includes('humidity')) {\n        const el = document.getElementById('humid-status');\n        if (el) el.textContent = parseFloat(msg.payload).toFixed(1) + '%';\n      } else if (msg.topic.includes('soil')) {\n        const el = document.getElementById('soil-status');\n        if (el) el.textContent = parseFloat(msg.payload).toFixed(1) + '%';\n      } else if (msg.topic.includes('gas')) {\n        const el = document.getElementById('gas-status');\n        if (el) el.textContent = parseFloat(msg.payload).toFixed(1) + '%';\n      }\n    }\n  });\n})(scope);\n</script>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 1040,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "realtime_display",
+        "type": "ui_template",
+        "z": "plant_tab_home",
+        "group": "plant_ui_group_realtime",
+        "name": "Real-time Sensor Display",
+        "order": 1,
+        "width": 12,
+        "height": 8,
+        "format": "<div class=\"realtime-container\">\n  <div class=\"sensor-card\" id=\"temp-card\">\n    <div class=\"sensor-icon\">\n      <i class=\"fa fa-thermometer-half\"></i>\n    </div>\n    <div class=\"sensor-info\">\n      <p class=\"sensor-label\">Temperature</p>\n      <p class=\"sensor-value\" id=\"temp-value\">--</p>\n      <p class=\"sensor-unit\">°C</p>\n    </div>\n  </div>\n  \n  <div class=\"sensor-card\" id=\"humid-card\">\n    <div class=\"sensor-icon\">\n      <i class=\"fa fa-tint\"></i>\n    </div>\n    <div class=\"sensor-info\">\n      <p class=\"sensor-label\">Humidity</p>\n      <p class=\"sensor-value\" id=\"humid-value\">--</p>\n      <p class=\"sensor-unit\">%</p>\n    </div>\n  </div>\n  \n  <div class=\"sensor-card\" id=\"soil-card\">\n    <div class=\"sensor-icon\">\n      <i class=\"fa fa-leaf\"></i>\n    </div>\n    <div class=\"sensor-info\">\n      <p class=\"sensor-label\">Soil Moisture</p>\n      <p class=\"sensor-value\" id=\"soil-value\">--</p>\n      <p class=\"sensor-unit\">%</p>\n    </div>\n  </div>\n  \n  <div class=\"sensor-card\" id=\"gas-card\">\n    <div class=\"sensor-icon\">\n      <i class=\"fa fa-fire\"></i>\n    </div>\n    <div class=\"sensor-info\">\n      <p class=\"sensor-label\">Gas</p>\n      <p class=\"sensor-value\" id=\"gas-value\">--</p>\n      <p class=\"sensor-unit\">%</p>\n    </div>\n  </div>\n  \n  <div class=\"sensor-card\" id=\"pump-card\">\n    <div class=\"sensor-icon\">\n      <i class=\"fa fa-power-off\"></i>\n    </div>\n    <div class=\"sensor-info\">\n      <p class=\"sensor-label\">Pump Status</p>\n      <p class=\"sensor-value\" id=\"pump-value\">OFF</p>\n      <p class=\"sensor-unit\">&nbsp;</p>\n    </div>\n  </div>\n</div>\n\n<script>\n(function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (msg && msg.topic) {\n      if (msg.topic.includes('temperature')) {\n        document.getElementById('temp-value').textContent = parseFloat(msg.payload).toFixed(1);\n        document.getElementById('temp-card').classList.add('updated');\n        setTimeout(() => document.getElementById('temp-card').classList.remove('updated'), 500);\n      } else if (msg.topic.includes('humidity')) {\n        document.getElementById('humid-value').textContent = parseFloat(msg.payload).toFixed(1);\n        document.getElementById('humid-card').classList.add('updated');\n        setTimeout(() => document.getElementById('humid-card').classList.remove('updated'), 500);\n      } else if (msg.topic.includes('soil')) {\n        document.getElementById('soil-value').textContent = parseFloat(msg.payload).toFixed(1);\n        document.getElementById('soil-card').classList.add('updated');\n        setTimeout(() => document.getElementById('soil-card').classList.remove('updated'), 500);\n      } else if (msg.topic.includes('gas')) {\n        document.getElementById('gas-value').textContent = parseFloat(msg.payload).toFixed(1);\n        document.getElementById('gas-card').classList.add('updated');\n        setTimeout(() => document.getElementById('gas-card').classList.remove('updated'), 500);\n      }\n    }\n  });\n})(scope);\n</script>\n\n<style>\n.realtime-container {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 15px;\n  padding: 15px;\n}\n\n.sensor-card {\n  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);\n  border-radius: 12px;\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  text-align: center;\n  box-shadow: 0 2px 8px rgba(0,0,0,0.1);\n  transition: all 0.3s ease;\n}\n\n.sensor-card:hover {\n  transform: translateY(-5px);\n  box-shadow: 0 4px 16px rgba(75, 127, 82, 0.3);\n}\n\n.sensor-card.updated {\n  animation: pulse-update 0.5s ease;\n}\n\n@keyframes pulse-update {\n  0%, 100% { transform: scale(1); }\n  50% { transform: scale(1.05); }\n}\n\n.sensor-icon {\n  font-size: 2.5rem;\n  color: #4B7F52;\n  margin-bottom: 10px;\n}\n\n.sensor-info {\n  width: 100%;\n}\n\n.sensor-label {\n  font-size: 0.85rem;\n  color: #666666;\n  margin: 5px 0;\n  font-weight: 500;\n}\n\n.sensor-value {\n  font-size: 2rem;\n  font-weight: bold;\n  color: #4B7F52;\n  margin: 10px 0;\n  font-family: 'Courier New', monospace;\n}\n\n.sensor-unit {\n  font-size: 0.9rem;\n  color: #888888;\n  margin: 5px 0;\n}\n\n@media (max-width: 1200px) {\n  .realtime-container {\n    grid-template-columns: repeat(2, 1fr);\n  }\n}\n\n@media (max-width: 768px) {\n  .realtime-container {\n    grid-template-columns: 1fr;\n  }\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1050,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "pump_text_update",
+        "type": "ui_template",
+        "z": "plant_tab_home",
+        "group": "plant_ui_group_realtime",
+        "name": "Update Pump Text",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<script>\n(function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (msg && msg.payload) {\n      const pumpValue = document.getElementById('pump-value');\n      const pumpCard = document.getElementById('pump-card');\n      if (pumpValue) {\n        pumpValue.textContent = msg.payload;\n        pumpValue.style.color = msg.payload === 'RUNNING' ? '#00b500' : '#ca3838';\n        pumpCard.classList.add('updated');\n        setTimeout(() => pumpCard.classList.remove('updated'), 500);\n      }\n      const pumpFeature = document.getElementById('pump-status');\n      if (pumpFeature) {\n        pumpFeature.textContent = msg.payload;\n        pumpFeature.style.color = msg.payload === 'RUNNING' ? '#00b500' : '#ca3838';\n      }\n    }\n  });\n})(scope);\n</script>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 670,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "mqtt_status_template",
+        "type": "ui_template",
+        "z": "plant_tab_home",
+        "group": "plant_ui_group_status",
+        "name": "MQTT Status Display",
+        "order": 1,
+        "width": 12,
+        "height": 1,
+        "format": "<div class=\"mqtt-status-bar\">\n  <span class=\"status-label\">MQTT Broker:</span>\n  <span class=\"status-value\" ng-class=\"{'status-connected': msg.payload === 'Connected', 'status-disconnected': msg.payload !== 'Connected'}\">\n    <i class=\"fa\" ng-class=\"{'fa-check-circle': msg.payload === 'Connected', 'fa-times-circle': msg.payload !== 'Connected'}\"></i>\n    {{msg.payload === 'Connected' ? 'Connected' : 'Disconnected'}}\n  </span>\n</div>\n\n<style>\n.mqtt-status-bar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 10px 15px;\n  background-color: #f5f5f5;\n  border-radius: 5px;\n}\n\n.status-label {\n  font-size: 16px;\n  font-weight: bold;\n  color: #333333;\n}\n\n.status-value {\n  font-size: 16px;\n  font-weight: bold;\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n\n.status-value i {\n  font-size: 18px;\n}\n\n.status-connected {\n  color: #00b500;\n}\n\n.status-disconnected {\n  color: #ca3838;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 640,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "temp_mqtt_in",
+        "type": "mqtt in",
+        "z": "plant_tab_sensors",
+        "name": "Temperature In",
+        "topic": "plant/sensor/temperature",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "plant_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": null,
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "temp_gauge",
+                "temp_chart",
+                "temp_debug"
+            ]
+        ]
+    },
+    {
+        "id": "temp_debug",
+        "type": "debug",
+        "z": "plant_tab_sensors",
+        "name": "Temp Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "humid_mqtt_in",
+        "type": "mqtt in",
+        "z": "plant_tab_sensors",
+        "name": "Humidity In",
+        "topic": "plant/sensor/humidity",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "plant_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": null,
+        "x": 100,
+        "y": 260,
+        "wires": [
+            [
+                "humid_gauge",
+                "humid_chart",
+                "humid_debug"
+            ]
+        ]
+    },
+    {
+        "id": "humid_debug",
+        "type": "debug",
+        "z": "plant_tab_sensors",
+        "name": "Humid Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "soil_avg_mqtt_in",
+        "type": "mqtt in",
+        "z": "plant_tab_sensors",
+        "name": "Soil Average In",
+        "topic": "plant/sensor/soil_avg",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "plant_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": null,
+        "x": 880,
+        "y": 120,
+        "wires": [
+            [
+                "soil_gauge",
+                "soil_chart",
+                "soil_debug"
+            ]
+        ]
+    },
+    {
+        "id": "soil1_mqtt_in",
+        "type": "mqtt in",
+        "z": "plant_tab_sensors",
+        "name": "Soil 1 In",
+        "topic": "plant/sensor/soil1",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "plant_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": null,
+        "x": 860,
+        "y": 220,
+        "wires": [
+            [
+                "soil1_text",
+                "soil1_status_fn"
+            ]
+        ]
+    },
+    {
+        "id": "soil2_mqtt_in",
+        "type": "mqtt in",
+        "z": "plant_tab_sensors",
+        "name": "Soil 2 In",
+        "topic": "plant/sensor/soil2",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "plant_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": null,
+        "x": 860,
+        "y": 260,
+        "wires": [
+            [
+                "soil2_text",
+                "soil2_status_fn"
+            ]
+        ]
+    },
+    {
+        "id": "soil3_mqtt_in",
+        "type": "mqtt in",
+        "z": "plant_tab_sensors",
+        "name": "Soil 3 In",
+        "topic": "plant/sensor/soil3",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "plant_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": null,
+        "x": 860,
+        "y": 300,
+        "wires": [
+            [
+                "soil3_text",
+                "soil3_status_fn"
+            ]
+        ]
+    },
+    {
+        "id": "soil1_status_fn",
+        "type": "function",
+        "z": "plant_tab_sensors",
+        "name": "Soil 1 Status",
+        "func": "const v = Number(msg.payload);\nlet status;\nif (isNaN(v)) {\n  status = 'No data available';\n} else if (v < 30) {\n  status = 'DRY';\n} else if (v < 60) {\n  status = 'NORMAL';\n} else {\n  status = 'WET';\n}\nmsg.payload = status;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1200,
+        "y": 360,
+        "wires": [
+            [
+                "soil1_status_text"
+            ]
+        ]
+    },
+    {
+        "id": "soil2_status_fn",
+        "type": "function",
+        "z": "plant_tab_sensors",
+        "name": "Soil 2 Status",
+        "func": "const v = Number(msg.payload);\nlet status;\nif (isNaN(v)) {\n  status = 'No data available';\n} else if (v < 30) {\n  status = 'DRY';\n} else if (v < 60) {\n  status = 'NORMAL';\n} else {\n  status = 'WET';\n}\nmsg.payload = status;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 420,
+        "wires": [
+            [
+                "soil2_status_text"
+            ]
+        ]
+    },
+    {
+        "id": "soil3_status_fn",
+        "type": "function",
+        "z": "plant_tab_sensors",
+        "name": "Soil 3 Status",
+        "func": "const v = Number(msg.payload);\nlet status;\nif (isNaN(v)) {\n  status = 'No data available';\n} else if (v < 30) {\n  status = 'DRY';\n} else if (v < 60) {\n  status = 'NORMAL';\n} else {\n  status = 'WET';\n}\nmsg.payload = status;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 480,
+        "wires": [
+            [
+                "soil3_status_text"
+            ]
+        ]
+    },
+    {
+        "id": "soil_debug",
+        "type": "debug",
+        "z": "plant_tab_sensors",
+        "name": "Soil Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "gas_mqtt_in",
+        "type": "mqtt in",
+        "z": "plant_tab_sensors",
+        "name": "Gas Sensor In",
+        "topic": "plant/sensor/gas",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "plant_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": null,
+        "x": 110,
+        "y": 460,
+        "wires": [
+            [
+                "gas_gauge",
+                "gas_chart",
+                "gas_debug"
+            ]
+        ]
+    },
+    {
+        "id": "gas_debug",
+        "type": "debug",
+        "z": "plant_tab_sensors",
+        "name": "Gas Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 410,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "comment_sensors",
+        "type": "comment",
+        "z": "plant_tab_sensors",
+        "name": "Sensor Monitoring - DHT (Temp/Humid) & Gas",
+        "info": "",
+        "x": 170,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "soil1_text",
+        "type": "ui_text",
+        "z": "plant_tab_sensors",
+        "group": "plant_ui_group_soil",
+        "order": 5,
+        "width": 6,
+        "height": 1,
+        "name": "Soil Sensor 1",
+        "label": "Sensor 1:",
+        "format": "{{msg.payload}} %",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1050,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "soil2_text",
+        "type": "ui_text",
+        "z": "plant_tab_sensors",
+        "group": "plant_ui_group_soil",
+        "order": 7,
+        "width": 6,
+        "height": 1,
+        "name": "Soil Sensor 2",
+        "label": "Sensor 2:",
+        "format": "{{msg.payload}} %",
+        "layout": "row-spread",
+        "x": 1050,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "soil3_text",
+        "type": "ui_text",
+        "z": "plant_tab_sensors",
+        "group": "plant_ui_group_soil",
+        "order": 9,
+        "width": 6,
+        "height": 1,
+        "name": "Soil Sensor 3",
+        "label": "Sensor 3:",
+        "format": "{{msg.payload}} %",
+        "layout": "row-spread",
+        "x": 1050,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "soil1_status_text",
+        "type": "ui_text",
+        "z": "plant_tab_sensors",
+        "group": "plant_ui_group_soil",
+        "order": 6,
+        "width": 6,
+        "height": 1,
+        "name": "Soil Sensor 1 Status",
+        "label": "Sensor 1 Status:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1430,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "soil2_status_text",
+        "type": "ui_text",
+        "z": "plant_tab_sensors",
+        "group": "plant_ui_group_soil",
+        "order": 8,
+        "width": 6,
+        "height": 1,
+        "name": "Soil Sensor 2 Status",
+        "label": "Sensor 2 Status:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1430,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "soil3_status_text",
+        "type": "ui_text",
+        "z": "plant_tab_sensors",
+        "group": "plant_ui_group_soil",
+        "order": 10,
+        "width": 6,
+        "height": 1,
+        "name": "Soil Sensor 3 Status",
+        "label": "Sensor 3 Status:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1450,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "9fdcb8367392f819",
+        "type": "ui_text",
+        "z": "plant_tab_sensors",
+        "group": "plant_ui_group_soil",
+        "order": 2,
+        "width": 12,
+        "height": 4,
+        "name": "NOTE",
+        "label": "NOTE:",
+        "format": "- <30%: DRY  → Soil is too dry, need watering. - 30–60%: NORMAL → siutable soil's humid.- >60%: WET → wet soil, no need watering.",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1355,
+        "y": 60,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "temp_gauge",
+        "type": "ui_gauge",
+        "z": "plant_tab_sensors",
+        "name": "Temperature Gauge",
+        "group": "plant_ui_group_temp",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Temperature (°C)",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "35",
+        "x": 500,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "humid_gauge",
+        "type": "ui_gauge",
+        "z": "plant_tab_sensors",
+        "name": "Humidity Gauge",
+        "group": "plant_ui_group_humid",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Humidity (%)",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "30",
+        "seg2": "60",
+        "x": 420,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "soil_gauge",
+        "type": "ui_gauge",
+        "z": "plant_tab_sensors",
+        "name": "Soil Gauge",
+        "group": "plant_ui_group_soil",
+        "order": 1,
+        "width": 12,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Soil Moisture (Average)",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "30",
+        "seg2": "60",
+        "x": 1150,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "gas_gauge",
+        "type": "ui_gauge",
+        "z": "plant_tab_sensors",
+        "name": "Gas Gauge",
+        "group": "plant_ui_group_gas",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Gas Level (%)",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "70",
+        "x": 420,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "temp_chart",
+        "type": "ui_chart",
+        "z": "plant_tab_sensors",
+        "name": "Temperature Chart",
+        "group": "plant_ui_group_temp",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "label": "Temperature History",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "No data",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": 1,
+        "removeOlderPoints": "100",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 490,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "humid_chart",
+        "type": "ui_chart",
+        "z": "plant_tab_sensors",
+        "name": "Humidity Chart",
+        "group": "plant_ui_group_humid",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "label": "Humidity History",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "No data",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "100",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2ca02c",
+            "#ff0000",
+            "#ff7f0e",
+            "#0095ff",
+            "#98df8a"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 420,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "soil_chart",
+        "type": "ui_chart",
+        "z": "plant_tab_sensors",
+        "name": "Soil Chart",
+        "group": "plant_ui_group_soil",
+        "order": 4,
+        "width": 12,
+        "height": 6,
+        "label": "Soil Moisture History",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "No data",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "100",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#d62728",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 1160,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "gas_chart",
+        "type": "ui_chart",
+        "z": "plant_tab_sensors",
+        "name": "Gas Chart",
+        "group": "plant_ui_group_gas",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "label": "Gas Level History",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "No data",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "100",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ff7f0e",
+            "#ff0000",
+            "#2ca02c",
+            "#0095ff",
+            "#98df8a"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 410,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "pump_control_out",
+        "type": "mqtt out",
+        "z": "plant_tab_pump",
+        "name": "Pump Control Out",
+        "topic": "plant/pump/control",
+        "qos": "1",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "plant_mqtt_broker",
+        "x": 380,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "pump_status_in",
+        "type": "mqtt in",
+        "z": "plant_tab_pump",
+        "name": "Pump Status In",
+        "topic": "plant/pump/status",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "plant_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": null,
+        "x": 630,
+        "y": 100,
+        "wires": [
+            [
+                "pump_status_function",
+                "pump_status_text"
+            ]
+        ]
+    },
+    {
+        "id": "pump_status_function",
+        "type": "function",
+        "z": "plant_tab_pump",
+        "name": "Format Pump Status",
+        "func": "// Lưu trạng thái và thời điểm bật/tắt bơm để tính tiến trình & thời gian nghỉ\nconst state = msg.payload;\nconst now = Date.now();\n\nflow.set('pumpCurrentState', state);\n\nif (state === 'ON') {\n    flow.set('pumpLastOnTime', now);\n} else if (state === 'OFF') {\n    flow.set('pumpLastOffTime', now);\n}\n\n// Định dạng lại text trạng thái hiển thị cho dashboard\nif (state === 'ON') {\n    msg.payload = 'PUMP RUNNING';\n} else {\n    msg.payload = 'PUMP STOPPED';\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 100,
+        "wires": [
+            [
+                "pump_status_template"
+            ]
+        ]
+    },
+    {
+        "id": "pump_cooldown_inject",
+        "type": "inject",
+        "z": "plant_tab_pump",
+        "name": "Pump Cooldown Tick",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 640,
+        "y": 280,
+        "wires": [
+            [
+                "pump_cooldown_function"
+            ]
+        ]
+    },
+    {
+        "id": "pump_cooldown_function",
+        "type": "function",
+        "z": "plant_tab_pump",
+        "name": "Pump Cooldown Progress",
+        "func": "const cooldown = 6000; // ms, giống PUMP_MIN_OFF_TIME trong code ESP32\nconst lastOff = flow.get('pumpLastOffTime') || 0;\n\nif (!lastOff) {\n    return null;\n}\n\nconst now = Date.now();\nconst elapsed = now - lastOff;\nlet remaining = cooldown - elapsed;\nif (remaining <= 0) {\n    remaining = 0;\n}\n\nconst percent = Math.min(100, Math.max(0, Math.round(elapsed / cooldown * 100)));\n\nmsg.payload = {\n    remaining: remaining,\n    percent: percent,\n    active: remaining > 0\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 280,
+        "wires": [
+            [
+                "pump_cooldown_template"
+            ]
+        ]
+    },
+    {
+        "id": "pump_mode_mqtt_in",
+        "type": "mqtt in",
+        "z": "plant_tab_pump",
+        "name": "Pump Mode In",
+        "topic": "plant/pump/control",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "plant_mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": null,
+        "x": 630,
+        "y": 220,
+        "wires": [
+            [
+                "pump_mode_function"
+            ]
+        ]
+    },
+    {
+        "id": "pump_mode_function",
+        "type": "function",
+        "z": "plant_tab_pump",
+        "name": "Format Pump Mode",
+        "func": "let p = String(msg.payload || '').toLowerCase();\nlet mode;\nif (p === 'auto') {\n    mode = 'AUTO';\n} else {\n    mode = 'MANUAL';\n}\nmsg.payload = mode;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 220,
+        "wires": [
+            [
+                "pump_mode_text"
+            ]
+        ]
+    },
+    {
+        "id": "pump_run_inject",
+        "type": "inject",
+        "z": "plant_tab_pump",
+        "name": "Pump Run Tick",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 640,
+        "y": 320,
+        "wires": [
+            [
+                "pump_run_function"
+            ]
+        ]
+    },
+    {
+        "id": "pump_run_function",
+        "type": "function",
+        "z": "plant_tab_pump",
+        "name": "Pump Run Progress",
+        "func": "// Tiến trình bơm: thời gian bơm / 10s\nconst maxRun = 10000; // 10 giây\nconst state = flow.get('pumpCurrentState') || 'OFF';\nconst lastOn = flow.get('pumpLastOnTime') || 0;\n\nif (state !== 'ON' || !lastOn) {\n    msg.payload = { seconds: 0, percent: 0, active: false };\n    return msg;\n}\n\nconst now = Date.now();\nconst elapsed = now - lastOn;\nconst clamped = Math.min(maxRun, Math.max(0, elapsed));\nconst percent = Math.round((clamped / maxRun) * 100);\n\nmsg.payload = {\n    seconds: clamped / 1000,\n    percent: percent,\n    active: true\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 320,
+        "wires": [
+            [
+                "pump_run_template"
+            ]
+        ]
+    },
+    {
+        "id": "comment_pump",
+        "type": "comment",
+        "z": "plant_tab_pump",
+        "name": "Pump Control - Manual & Automatic Control",
+        "info": "",
+        "x": 200,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "pump_on_button",
+        "type": "ui_button",
+        "z": "plant_tab_pump",
+        "name": "Pump ON",
+        "group": "plant_ui_group_pump_control",
+        "order": 1,
+        "width": 3,
+        "height": 2,
+        "passthru": false,
+        "label": "TURN ON",
+        "tooltip": "Turn pump ON",
+        "color": "white",
+        "bgcolor": "#00b500",
+        "icon": "fa-power-off",
+        "payload": "on",
+        "payloadType": "str",
+        "topic": "plant/pump/control",
+        "topicType": "str",
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "pump_control_out"
+            ]
+        ]
+    },
+    {
+        "id": "pump_off_button",
+        "type": "ui_button",
+        "z": "plant_tab_pump",
+        "name": "Pump OFF",
+        "group": "plant_ui_group_pump_control",
+        "order": 2,
+        "width": 3,
+        "height": 2,
+        "passthru": false,
+        "label": "TURN OFF",
+        "tooltip": "Turn pump OFF",
+        "color": "white",
+        "bgcolor": "#ca3838",
+        "icon": "fa-power-off",
+        "payload": "off",
+        "payloadType": "str",
+        "topic": "plant/pump/control",
+        "topicType": "str",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "pump_control_out"
+            ]
+        ]
+    },
+    {
+        "id": "pump_auto_button",
+        "type": "ui_button",
+        "z": "plant_tab_pump",
+        "name": "Auto Mode",
+        "group": "plant_ui_group_pump_control",
+        "order": 3,
+        "width": 3,
+        "height": 2,
+        "passthru": false,
+        "label": "AUTO MODE",
+        "tooltip": "Enable automatic mode",
+        "color": "white",
+        "bgcolor": "#0094ce",
+        "icon": "fa-refresh",
+        "payload": "auto",
+        "payloadType": "str",
+        "topic": "plant/pump/control",
+        "topicType": "str",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "pump_control_out"
+            ]
+        ]
+    },
+    {
+        "id": "pump_manual_button",
+        "type": "ui_button",
+        "z": "plant_tab_pump",
+        "name": "Manual Mode",
+        "group": "plant_ui_group_pump_control",
+        "order": 4,
+        "width": 3,
+        "height": 2,
+        "passthru": false,
+        "label": "MANUAL MODE",
+        "tooltip": "Enable manual mode",
+        "color": "white",
+        "bgcolor": "#e6e600",
+        "icon": "fa-hand-paper-o",
+        "payload": "manual",
+        "payloadType": "str",
+        "topic": "plant/pump/control",
+        "topicType": "str",
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "pump_control_out"
+            ]
+        ]
+    },
+    {
+        "id": "pump_status_text",
+        "type": "ui_text",
+        "z": "plant_tab_pump",
+        "group": "plant_ui_group_pump_status",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "name": "Pump Status Text",
+        "label": "Status:",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 850,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "pump_mode_text",
+        "type": "ui_text",
+        "z": "plant_tab_pump",
+        "group": "plant_ui_group_pump_status",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "name": "Pump Mode Text",
+        "label": "Mode:",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 1080,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "pump_status_template",
+        "type": "ui_template",
+        "z": "plant_tab_pump",
+        "group": "plant_ui_group_pump_status",
+        "name": "Pump Status Display",
+        "order": 1,
+        "width": 6,
+        "height": 6,
+        "format": "<div class=\"pump-status-container\">\n  <div class=\"pump-icon\" ng-class=\"{'pump-on': msg.payload === 'PUMP RUNNING', 'pump-off': msg.payload === 'PUMP STOPPED'}\">\n    <i class=\"fa fa-tint\" aria-hidden=\"true\"></i>\n  </div>\n  <p class=\"pump-status-text\" ng-class=\"{'status-on': msg.payload === 'PUMP RUNNING', 'status-off': msg.payload === 'PUMP STOPPED'}\">\n    {{msg.payload}}\n  </p>\n</div>\n\n<style>\n.pump-status-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  height: 250px;\n  padding: 20px;\n}\n\n.pump-icon {\n  width: 120px;\n  height: 120px;\n  border-radius: 50%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-size: 60px;\n  transition: all 0.3s ease;\n  margin-bottom: 20px;\n}\n\n.pump-icon.pump-on {\n  background-color: #00b500;\n  color: white;\n  box-shadow: 0 0 20px 5px rgba(0, 181, 0, 0.5);\n  animation: pulse 2s infinite;\n}\n\n.pump-icon.pump-off {\n  background-color: #ca3838;\n  color: white;\n  box-shadow: none;\n}\n\n@keyframes pulse {\n  0%, 100% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.05);\n  }\n}\n\n.pump-status-text {\n  font-size: 24px;\n  font-weight: bold;\n  text-align: center;\n  margin: 0;\n  transition: color 0.3s ease;\n}\n\n.pump-status-text.status-on {\n  color: #00b500;\n}\n\n.pump-status-text.status-off {\n  color: #ca3838;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1070,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "pump_cooldown_template",
+        "type": "ui_template",
+        "z": "plant_tab_pump",
+        "group": "plant_ui_group_pump_timing",
+        "name": "Pump Cooldown Display",
+        "order": 2,
+        "width": 6,
+        "height": 2,
+        "format": "<div class=\"cooldown-container\" ng-if=\"msg && msg.payload\">\n  <p class=\"cooldown-title\">Time-break between 2 pump (s)</p>\n  <p class=\"cooldown-text\" ng-if=\"msg.payload.active\">\n    Estimate: {{ (msg.payload.remaining/1000) | number:1 }} s\n  </p>\n  <p class=\"cooldown-text ready\" ng-if=\"!msg.payload.active\">\n    Ready!\n  </p>\n  <div class=\"cooldown-bar\">\n    <div class=\"cooldown-fill\" ng-style=\"{'width': (msg.payload.percent || 0) + '%'}\"></div>\n  </div>\n</div>\n\n<style>\n.cooldown-container {\n  width: 100%;\n  max-width: 320px;\n  margin: 0 auto;\n  text-align: center;\n}\n\n.cooldown-title {\n  font-size: 14px;\n  margin-bottom: 4px;\n  color: #555555;\n}\n\n.cooldown-text {\n  font-size: 13px;\n  margin: 0 0 6px 0;\n  color: #333333;\n}\n\n.cooldown-text.ready {\n  color: #00b500;\n  font-weight: bold;\n}\n\n.cooldown-bar {\n  width: 100%;\n  height: 10px;\n  background-color: #e0e0e0;\n  border-radius: 6px;\n  overflow: hidden;\n}\n\n.cooldown-fill {\n  height: 100%;\n  width: 0%;\n  background: linear-gradient(90deg, #ca3838, #4B7F52);\n  transition: width 0.9s linear;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1150,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "pump_run_template",
+        "type": "ui_template",
+        "z": "plant_tab_pump",
+        "group": "plant_ui_group_pump_timing",
+        "name": "Pump Run Display",
+        "order": 1,
+        "width": 6,
+        "height": 2,
+        "format": "<div class=\"run-container\" ng-if=\"msg && msg.payload\">\n  <p class=\"run-title\">Pumping/10s</p>\n  <p class=\"run-text\" ng-if=\"msg.payload.active\">\n    Pump: {{ (msg.payload.seconds) | number:1 }} / 10.0 s\n  </p>\n  <p class=\"run-text idle\" ng-if=\"!msg.payload.active\">\n    No pump\n  </p>\n  <div class=\"run-bar\">\n    <div class=\"run-fill\" ng-style=\"{'width': (msg.payload.percent || 0) + '%'}\"></div>\n  </div>\n</div>\n\n<style>\n.run-container {\n  width: 100%;\n  max-width: 320px;\n  margin: 0 auto 4px auto;\n  text-align: center;\n}\n\n.run-title {\n  font-size: 14px;\n  margin-bottom: 4px;\n  color: #555555;\n}\n\n.run-text {\n  font-size: 13px;\n  margin: 0 0 6px 0;\n  color: #333333;\n}\n\n.run-text.idle {\n  color: #888888;\n}\n\n.run-bar {\n  width: 100%;\n  height: 10px;\n  background-color: #e0e0e0;\n  border-radius: 6px;\n  overflow: hidden;\n}\n\n.run-fill {\n  height: 100%;\n  width: 0%;\n  background: linear-gradient(90deg, #4B7F52, #00b500);\n  transition: width 0.9s linear;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1150,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    }
+]

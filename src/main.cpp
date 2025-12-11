@@ -32,8 +32,8 @@ const int PIN_MQ2 = 35; // Gas sensor analog pin
 // Pin of DHT, Relay, Pump status LEDs
 const int DHT11PIN = 18; // DHT11 data pin
 const int PIN_RELAY_PUMP = 26;
-const int PIN_LED_PUMP_RED = 22;   // LED đỏ: bơm TẮT
-const int PIN_LED_PUMP_GREEN = 4; // LED xanh: bơm BẬT
+const int PIN_LED_PUMP_RED = 22;   // Red LED : pump OFF
+const int PIN_LED_PUMP_GREEN = 4; // Green LED : pump ON
 
 int soilMoistureValues[NUM_SOIL_SENSORS] = {0, 0, 0};
 
@@ -70,7 +70,7 @@ namespace
 
     // Pump state variables
     bool isPumpOn = false;
-    bool autoMode = false; // Khởi động ở chế độ MANUAL
+    bool autoMode = false; 
     unsigned long pumpStartTime = 0;
     unsigned long lastPumpOffTime = 0;
     int wateringCount = 0;
@@ -80,7 +80,7 @@ namespace
 
 }
 
-// Ticker callback functions: chỉ đặt cờ, không làm việc nặng
+// Ticker callback functions
 void sensorTickerHandler()
 {
     shouldReadSensors = true;
@@ -110,7 +110,6 @@ float readAverageSoilMoisture()
 
         Serial.printf("Soil %d: %d%% (raw: %d)\n", i + 1, moisture, rawValue);
 
-        // Lưu lại giá trị từng cảm biến để publish riêng lẻ
         soilMoistureValues[i] = moisture;
 
         if (moisture >= 0)
@@ -150,10 +149,9 @@ void turnPumpOn()
     {
         Serial.println(" [PUMP] Turning ON...");
         
-        // Disable interrupts temporarily to prevent interference
         noInterrupts();
         digitalWrite(PIN_RELAY_PUMP, HIGH);
-        // LED trạng thái: xanh ON, đỏ OFF
+
         digitalWrite(PIN_LED_PUMP_GREEN, HIGH);
         digitalWrite(PIN_LED_PUMP_RED, LOW);
         interrupts();
@@ -164,7 +162,6 @@ void turnPumpOn()
 
         Serial.println(" [PUMP] Pump turned ON");
 
-        // Cập nhật trạng thái MQTT ngay lập tức để Node-RED phản hồi nhanh
         mqttClient.publish(pump_status_topic, "ON", true);
     }
 }
@@ -175,10 +172,9 @@ void turnPumpOff()
     {
         Serial.println(" [PUMP] Turning OFF...");
         
-        // Disable interrupts temporarily to prevent interference
         noInterrupts();
         digitalWrite(PIN_RELAY_PUMP, LOW);
-        // LED trạng thái: đỏ ON, xanh OFF
+
         digitalWrite(PIN_LED_PUMP_GREEN, LOW);
         digitalWrite(PIN_LED_PUMP_RED, HIGH);
         interrupts();
@@ -189,14 +185,12 @@ void turnPumpOff()
 
         Serial.printf(" [PUMP] Pump turned OFF (ran for %lu seconds)\n", duration / 1000);
 
-        // Cập nhật trạng thái MQTT ngay lập tức để Node-RED phản hồi nhanh
         mqttClient.publish(pump_status_topic, "OFF", true);
     }
 }
 
 void checkPumpSafety()
 {
-    // Auto turn off if pump runs too long
     if (isPumpOn)
     {
         unsigned long runTime = millis() - pumpStartTime;
@@ -215,7 +209,6 @@ void autoControlPump(float soilMoisture)
 
     if (!isPumpOn)
     {
-        // Turn on pump if soil is dry
         if (soilMoisture < SOIL_DRY_THRESHOLD)
         {
             Serial.printf(" Soil too dry (%.1f%% < %d%%), starting pump\n",
@@ -225,7 +218,6 @@ void autoControlPump(float soilMoisture)
     }
     else
     {
-        // Turn off pump if soil is wet enough
         if (soilMoisture >= SOIL_WET_THRESHOLD)
         {
             Serial.printf(" Soil moisture sufficient (%.1f%% >= %d%%), stopping pump\n",
@@ -238,7 +230,6 @@ void autoControlPump(float soilMoisture)
 // SENSOR READ & PUBLISH
 void sensorReadPublish()
 {
-    // Skip sensor reading if pump just switched (still in stabilization period)
     unsigned long currentTime = millis();
     if (isPumpOn && (currentTime - pumpStartTime < 1000))
     {
@@ -251,7 +242,7 @@ void sensorReadPublish()
         return;
     }
 
-    // Read DHT sensor (đọc một lần, không retry/cache)
+    //read dht sensor
     float temperature = dht.readTemperature();
     float humidity = dht.readHumidity();
 
@@ -372,10 +363,11 @@ void setup()
     pinMode(PIN_RELAY_PUMP, OUTPUT);
     pinMode(PIN_LED_PUMP_RED, OUTPUT);
     pinMode(PIN_LED_PUMP_GREEN, OUTPUT);
+
     digitalWrite(PIN_RELAY_PUMP, LOW);
-    // Mặc định bơm tắt & MANUAL: LED đỏ sáng, LED xanh tắt
     digitalWrite(PIN_LED_PUMP_RED, HIGH);
     digitalWrite(PIN_LED_PUMP_GREEN, LOW);
+
     isPumpOn = false;
     autoMode = false;
 
@@ -391,7 +383,7 @@ void setup()
 
     mqttClient.setCallback(mqttCallback);
     mqttClient.setServer(EMQX::broker, EMQX::port);
-    // Đọc và in đầy đủ dữ liệu (DHT + soil) định kỳ bằng Ticker (chỉ đặt cờ)
+
     sensorTicker.attach_ms(SENSOR_INTERVAL, sensorTickerHandler);
     pumpCheckTicker.attach_ms(PUMP_CHECK_INTERVAL, pumpCheckTickerHandler);
 }
@@ -401,7 +393,6 @@ void loop()
     MQTT::reconnect(mqttClient, client_id, EMQX::username, EMQX::password, pump_control_topic);
     mqttClient.loop();
 
-    // Xử lý theo cờ do Ticker đặt (tránh làm nặng trong callback Ticker)
     if (shouldReadSensors)
     {
         shouldReadSensors = false;
@@ -414,7 +405,6 @@ void loop()
         checkPumpSafety();
     }
 
-    // Small delay to prevent watchdog issues
     delay(10);
-    yield(); // Allow ESP32 to handle background tasks
+    yield(); 
 }

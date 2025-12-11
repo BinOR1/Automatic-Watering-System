@@ -26,7 +26,7 @@ const int PIN_SOIL_1 = 32;
 const int PIN_SOIL_2 = 33;
 const int PIN_SOIL_3 = 34;
 
-// Gas (MQ-2) and LDR sensors
+// Gas (MQ-2)
 const int PIN_MQ2 = 35; // Gas sensor analog pin
 
 // Pin of DHT, Relay, Pump status LEDs

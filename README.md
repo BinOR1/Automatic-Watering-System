@@ -39,6 +39,8 @@ __Mục tiêu__
 - MQTT Broker: EMQX
 - Phần mềm phát triển: Platform.IO
 
+# Sơ đồ khối:
+[!Hình 8](./images/8.png)
 
 # Sơ đồ chân kết nối:
 1. Sơ đồ pin:
@@ -100,4 +102,7 @@ Bảng kết nối với ESP32:
 - Có thể mở rộng thêm:
     + Lưu log dữ liệu vào InfluxDB / TimescaleDB để phân tích lâu dài.
     + Thêm nhiều zone tưới khác nhau với nhiều relay/bơm.
+
+## Video demo: [Video demo](https://youtu.be/tf6vNpVYy3Y)
+
 

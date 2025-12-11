@@ -51,7 +51,6 @@ Bảng kết nối với ESP32:
 | **Relay**      | DC+, COM      | 5V            |
 |                | DC-           | GND           |
 |                | In            | 26            |
-|                | NO            | Bơm(+)        |
 | **Soil Sensor**| Vcc           | 3.3V          |
 |                | GND           | GND           |
 | Soil 1         | AOUT          | 32            |
@@ -64,10 +63,9 @@ Bảng kết nối với ESP32:
 | **MQ-2**       | VCC           | 3.3V          |
 |                | GND           | GND           |
 |                | AO            | 35            |
-| **Bơm DC 5V**  | +             | NO            |
-|                | -             | GND           |
+| **Bơm DC 5V**  | -             | GND           |
 | **LED**        | LED 1         | 4             |
-|                | LED 2         | 22             |
+|                | LED 2         | 22            |
 
 
 ## Kết quả
